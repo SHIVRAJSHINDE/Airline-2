@@ -21,7 +21,7 @@ class EDA:
         try:
             self.df = pd.read_csv(path)
             self.df.dropna(inplace=True)
-            self.df['Date_of_Journey'] = pd.to_datetime(self.df['Date_of_Journey'], format="%d/%m/%Y")
+            self.df['Date_of_Journey'] = pd.to_datetime(self.df['Date_of_Journey'], format="%d-%m-%Y")
             self.df['JourneyDay'] = self.df['Date_of_Journey'].dt.day
             self.df['JourneyMonth'] = self.df['Date_of_Journey'].dt.month
             self.df['JourneyYear'] = self.df['Date_of_Journey'].dt.year
